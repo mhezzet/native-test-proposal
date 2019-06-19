@@ -1,0 +1,39 @@
+import React, { useState } from 'react'
+import { Text, View } from 'react-native'
+import Landing from './screens/Landing'
+import Tutors from './screens/Tutors'
+import useLocations from './hooks/useLocations'
+import useTutors from './hooks/useTutors'
+
+export default function App() {
+  const [screen, setScreen] = useState('landing')
+  const [city, setCity] = useState('')
+  const [searchField, setSearchField] = useState('')
+  const locations = useLocations()
+  const tutors = useTutors()
+
+  return (
+    <>
+      {screen === 'landing' && (
+        <Landing
+          setScreen={setScreen}
+          city={city}
+          setCity={setCity}
+          locations={locations}
+          searchField={searchField}
+          setSearchField={setSearchField}
+        />
+      )}
+      {screen === 'tutors' && (
+        <Tutors
+          setScreen={setScreen}
+          city={city}
+          setCity={setCity}
+          locations={locations}
+          searchField={searchField}
+          setSearchField={setSearchField}
+        />
+      )}
+    </>
+  )
+}
