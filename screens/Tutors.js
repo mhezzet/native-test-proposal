@@ -57,6 +57,7 @@ export default function Tutors({
           </View>
         </View>
       </View>
+
       <View
         style={{
           display: 'flex',
@@ -69,6 +70,11 @@ export default function Tutors({
         {tutors.map(tutor => (
           <TutorCard key={tutor.id} tutor={tutor} />
         ))}
+        {tutors.length === 0 && (
+          <Text style={{ textAlign: 'center', margin: 20, fontSize: 24 }}>
+            لا يوجد نتائج{' '}
+          </Text>
+        )}
       </View>
     </ScrollView>
   )

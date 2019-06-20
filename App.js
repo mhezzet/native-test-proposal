@@ -5,7 +5,7 @@ import useLocations from './hooks/useLocations'
 import useTutors from './hooks/useTutors'
 
 export default function App() {
-  const [screen, setScreen] = useState('tutors')
+  const [screen, setScreen] = useState('landing')
   const [city, setCity] = useState('')
   const [searchField, setSearchField] = useState('')
   const locations = useLocations()
