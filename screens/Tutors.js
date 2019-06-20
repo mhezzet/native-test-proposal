@@ -20,7 +20,7 @@ export default function Tutors({
   tutors
 }) {
   return (
-    <View>
+    <ScrollView>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Search Result</Text>
       </View>
@@ -57,14 +57,20 @@ export default function Tutors({
           </View>
         </View>
       </View>
-      <ScrollView
-        contentContainerStyle={{ alignItems: 'center', direction: 'rtl' }}
+      <View
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          direction: 'rtl',
+          marginBottom: 50,
+          justifyContent: 'center'
+        }}
       >
         {tutors.map(tutor => (
           <TutorCard key={tutor.id} tutor={tutor} />
         ))}
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   )
 }
 
